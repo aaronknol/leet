@@ -3,7 +3,6 @@ const longestSubstring = (str: string) => {
   const stringAsArray = Array.from(str);
 
   for (let i = 0; i < stringAsArray.length; i++) {
-    console.log("i:", stringAsArray[i]);
     let current: string[] = [stringAsArray[i]];
 
     if (maximum.length === 0) {
@@ -16,10 +15,9 @@ const longestSubstring = (str: string) => {
       }
       if (!current.includes(stringAsArray[j])) {
         current.push(stringAsArray[j]);
-        console.log("in here: current", current);
       }
 
-      if (current.length >= maximum.length) {
+      if (current.length > maximum.length) {
         maximum = current;
       }
     }
@@ -27,8 +25,8 @@ const longestSubstring = (str: string) => {
   return maximum;
 };
 
-longestSubstring("abcabcbb");
+console.log(longestSubstring("abcabcbb"));
 console.log("-----");
-longestSubstring("b");
+console.log(longestSubstring("b"));
 console.log("-----");
-longestSubstring("pwwkew");
+console.log(longestSubstring("pwwkew"));
